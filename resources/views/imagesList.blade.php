@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Image uploader</title>
 
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -63,12 +63,9 @@
                 </a>
 
                 {{-- Images list --}}
-                <ul class="d-flex flex-row justify-content-center align-items-center flex-wrap list-unstyled gap-3">
+                <ul class="d-flex flex-row justify-content-center align-items-center flex-wrap list-unstyled gap-3 pt-8">
                     @foreach ($images as $image)
-                        <?php
-                            echo "<script>console.log('" . $image->getFilename() . "' );</script>";
-                        ?>
-                        <li style="width:350px;" class="p-2">
+                        <li style="width:350px; background-color: #EAE0D5;" class="p-2">
                             <img src="{{asset('images/'. $image->getFilename())}}" style='height: 100%; width: 100%; object-fit: contain'>
                             <form method='post' action="{{ route('image.removeImage') }}" class="pt-2">
                                 @csrf

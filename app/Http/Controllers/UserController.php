@@ -24,11 +24,10 @@ class UserController extends Controller {
     
              Session::flash('message','Deleted Successfully.');
              Session::flash('alert-class', 'alert-success');
-          }else{
+          } else {
              Session::flash('message','File not exists.');
              Session::flash('alert-class', 'alert-danger');
           }
-    
           return redirect('/');
    }
 }

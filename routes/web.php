@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('upload-image', [ ImageUploadController::class, 'index' ]);
 Route::post('upload-image', [ ImageUploadController::class, 'store' ])->name('image.store');
 Route::get('/', [UserController::class, 'index' ]);
+Route::post('/', [UserController::class, 'removeImage' ])->name('image.removeImage');

@@ -50,8 +50,6 @@
                     <h1>Upload Image in Laravel</h1>
                 </div>
 
-            
-
                 <div class="panel-body mt-5">
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success alert-dismissible fade show mb-2" role="alert">

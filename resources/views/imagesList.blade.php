@@ -62,12 +62,19 @@
                     </button>
                 </a>
 
-                {{-- <div class="infospi" id="ipi1"> lorem ipsum</div> --}}
-
+                {{-- Images list --}}
                 <ul class="d-flex flex-row justify-content-center align-items-center flex-wrap list-unstyled gap-3">
                     @foreach ($images as $image)
+                        <?php
+                            echo "<script>console.log('" . $image->getFilename() . "' );</script>";
+                        ?>
                         <li style="width:350px;" class="p-2">
                             <img src="{{asset('images/'. $image->getFilename())}}" style='height: 100%; width: 100%; object-fit: contain'>
+                            <form method='post' action="{{ route('image.removeImage') }}" class="pt-2">
+                                @csrf
+                                <input type="hidden" name="filepath" value="{{ $image }}">
+                                <input type="submit" class="btn btn-danger" name="btnsubmit" value="Delete Image">
+                             </form>   
                         </li>
                     @endforeach
                 </ul>
